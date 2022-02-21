@@ -19,6 +19,15 @@ class postController{
             console.log(error)
         }
     }
+
+    async getOnePost(req, res){
+        try {
+            const post = await Post.findOne()
+            res.json(post)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 
 
