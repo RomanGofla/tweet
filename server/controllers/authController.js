@@ -67,6 +67,10 @@ class AuthController {
             console.log(error)
         }
     }
+    async check(req, res){
+        const token = generateJwt(req.user.id, req.user.username, req.user.roles)
+        return res.json({token})
+    }
 }
 
 module.exports = new AuthController()
